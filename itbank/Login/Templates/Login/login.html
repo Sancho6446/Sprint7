@@ -15,7 +15,8 @@
 		<div class="container">
 			<div class="forms-container">
 				<div class="signin-signup">
-					<form action="#" class="sign-in-form">
+					<form method="POST" class="sign-in-form">
+						{% csrf_token %}
 						<h2 class="title">Iniciar sesión</h2>
 						<div class="input-field">
 							<i class="fas fa-user"></i>
@@ -25,17 +26,18 @@
 							<i class="fas fa-lock"></i>
 							<input type="password" placeholder="Contraseña" />
 						</div>
-						<a href="dashboard.html">
+						<a href="{% url 'dashboard' %}">
 							<input type="button" value="Ingresar" class="btn solid" />
 						</a>
 						<p class="social-text">
-							<a href="Error404.html" class="social-text"
+							<a href="{% url 'error404' %}" class="social-text"
 								>Olvidaste tu contraseña?</a
 							>
 						</p>
 						<div class="social-media"></div>
 					</form>
-					<form action="#" class="sign-up-form">
+					<form method="POST" class="sign-up-form">
+						{% csrf_token %}
 						<h2 class="title">Crear cuenta</h2>
 						<div class="input-field">
 							<i class="fas fa-user"></i>
@@ -65,7 +67,7 @@
 							Crear cuenta
 						</button>
 					</div>
-					<img src="./assets/img/log.svg" class="image" alt="" />
+					<img src="{% static 'Login/img/log.svg' %}" class="image" alt="" />
 				</div>
 				<div class="panel right-panel">
 					<div class="content">
@@ -78,7 +80,7 @@
 							Iniciar sesión
 						</button>
 					</div>
-					<img src="./assets/img/register.svg" class="image" alt="" />
+					<img src="{% static 'Login/img/register.svg' %}" class="image" alt="" />
 				</div>
 			</div>
 		</div>
