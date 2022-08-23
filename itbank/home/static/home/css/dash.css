@@ -1,0 +1,24 @@
+#tarjeta{
+    background: linear-gradient(to right, rgb(76, 54, 158),rgb(31, 82, 168))
+}
+
+#caja-de-ahorro-text{
+    color: white;
+}
+
+#caja-de-ahorro-text-valor{
+    margin-top: 5%;
+    color: white;
+    font-size: 1.4rem;
+}
+
+#img-visa{
+    float: right;
+}
+#sidebar-item:hover{
+    background-color: rgb(67, 35, 156);
+    color: white;
+}
+#grafico{
+    margin-top: 0.8rem;
+}
