@@ -277,6 +277,13 @@
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
+        <a id="sidebar-item" class="nav-link collapsed" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="Error404.html">
+          <i class="bi bi-file-earmark"></i>
+          <span >Préstamos</span>
+        </a>
+      </li><!-- End Blank Page Nav -->
+
+      <li class="nav-item">
         <a id="sidebar-item" class="nav-link collapsed" href="404">
           <i class="bi bi-file-earmark"></i>
           <span >Transferencias</span>
@@ -349,7 +356,7 @@
                       <i class="bi bi-currency-dollar"></i>
                     </div>
                     <div class="ps-3 my-4">
-                      <h6>$40.000,42</h6>
+                      <h6>{{cuenta.balance}}</h6>
                     </div>
                   </div>
                 </div>
@@ -362,7 +369,15 @@
 
 
             <!-- Reports -->
-            
+            {% if message %}
+              <div class="col-12">
+                <div class="card info-card my-auto p-0 mb-3">
+                  <div class="card-body text-center p-0 bg-{{color}} rounded">
+                    <h5 class="card-title m-0 p-0 text-white"><strong>{{message}}</strong></h5>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
             <div class="col-12">
               <div id="grafico" class="card py-4">
                 <div class="card-body">
@@ -500,6 +515,53 @@
     </section>
   </main><!-- End #main -->
 
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Solicitud de préstamo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body m-4">
+          <form action="#" method="post">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6">
+                <label for="loan-type">Tipo de préstamo</label>
+              </div>
+              <div class="col-md-6">
+                <label for="start-date">Fecha de inicio</label>
+              </div>
+            </div>
+            <div class="row mt-1">
+              <div class="col-md-6">
+                <select name="loan-type" class="form-control" requiered>
+                  <option value="HIPOTECARIO">HIPOTECARIO</option>
+                  <option value="PRENDARIO">PRENDARIO</option>
+                  <option value="PERSONAL">PERSONAL</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <input type="date" class="form-control" name="start-date" value="2022-01-01" min="2018-01-01" max="2040-12-31" requiered>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <label for="amount">Monto</label>
+              </div>
+              <div class="col-12">
+                <input type="number" name="amount" class="form-control" min="0" max="{{limite}}" requiered>
+              <div>
+            </div>
+            <div class="row d-flex justify-content-center mt-4">
+              <button type="submit" class="btn btn-secondary w-25 bg-primary me-2">Solicitar</button>
+              <button type="button" class="btn btn-secondary w-25" data-bs-dismiss="modal">Cerrar</button>
+            </div>    
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

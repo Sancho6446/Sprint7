@@ -2,7 +2,7 @@
 
 <nav class="navbar sticky-top navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{% url 'home' %}">
             <img
                 src="{% static 'images/ITBANK.png' %}"
                 alt=""
@@ -13,7 +13,7 @@
         </a>
         <form>
             <button class="btn btn-sm btn-outline-git slight" type="button">
-                <a href="dolar.html"> Cotizacion </a>
+                <a href="{% url 'dolar' %}"> Cotizacion </a>
             </button>
             <button class="btn btn-sm btn-outline-git slight" type="button">
                 <a href="/dashboard/"> Dashboard </a>

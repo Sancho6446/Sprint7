@@ -4,3 +4,6 @@ from django.http import HttpResponse
 
 def homepage(request):
     return render(request, 'home.html')
+
+def dolar(request):
+    return render(request, 'dollar.html')
