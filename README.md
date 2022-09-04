@@ -21,6 +21,7 @@ Password: 1234
 # Dashboard
 
  Los datos del dashboard correspondiente a cada usuario son tomados de la base de datos mediante **querys** realizadas dentro de las **view-function** de la respectiva app, y pasando diccionarios **context** a los **templates**. También se utilizaron **template tags** dentro de los archivos html para la lógica de cargado de las distintas "perspectivas" de los usuarios. Por ejemplo según el tipo de tarjeta de la cuenta del usuario, aparecerá una imágen de Visa, de Mastercard, de AmEx o de Maestro. Por otra parte, si el usuario no posee cuenta se visualizará un mensaje "el usuario no posee cuenta" y no visualizará ninguna tarjeta, como tampoco le aparecerá la opción para realizar un préstamo.
+ 
  ![image](https://user-images.githubusercontent.com/105322348/188300781-e4d44882-ebbe-43f2-921d-7ea62d4148af.png)
 
 # Notificación de Préstamo
