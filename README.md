@@ -3,6 +3,7 @@ Superuser: agustin
 Password: 1234
 
 Another users: (customer_name+customer_surname+customer_id)
+e.g: lesliemoses2
 Password: 1234
 
 # UPDATE Y CORRECCIONES
