@@ -1,10 +1,11 @@
 # Sprint7
-Hay que usar super usuario para loggearse 
-Usuario: Agustin
-Contraseña: 1234
+Superuser: agustin
+Password: 1234
 
+Another users: (customer_name+customer_surname+customer_id)
+Password: 1234
 
-# Sprint7
+# UPDATE Y CORRECCIONES
  Finalización de Sprint7 aplicando todas las correcciones que hacían falta de la entrega anterior, e incluyendo nuevas características.
  
  # Previsualización del Inicio
