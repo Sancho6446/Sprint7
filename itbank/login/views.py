@@ -5,23 +5,11 @@ from django.http import HttpResponseRedirect
 from django.db.models import Q
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-from cuentas.models import Cliente, Cuenta
-from login.models import Usuario
+#from .models import Room, Topic
+#from .forms import RoomForm
 
 
-def create_context(username):
-    customer_id = Usuario.objects.get(
-        username=username).customer_id
 
-    cliente = Cliente.objects.get(
-        customer_id=customer_id)
-
-    cuenta = Cuenta.objects.get(
-        account_id=customer_id)
-
-    limites = {1: 100000, 2: 300000, 3: 500000}
-
-    return {'cliente': cliente, 'username': username, 'cuenta': cuenta, 'limite': limites[cuenta.account_type.act_id]}
 
 def loginPage(request):
     page='login.html'
@@ -53,3 +41,5 @@ def loginPage(request):
 def logoutPage(request):
     logout(request)
     return redirect('home')
+    
+
